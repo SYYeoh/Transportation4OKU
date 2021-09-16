@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "576574815754",
+    "project_id": "transportation4oku",
+    "storage_bucket": "transportation4oku.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576574815754:android:875ee5ec50e9142f7429f3",
+        "android_client_info": {
+          "package_name": "com.example.transportation4oku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576574815754-426rh6gauv6lg5jc0ch5sne2378ufppt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzL8CZ15ubfDhXxVW0QKVv3uf2WC_kvGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "576574815754-426rh6gauv6lg5jc0ch5sne2378ufppt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
