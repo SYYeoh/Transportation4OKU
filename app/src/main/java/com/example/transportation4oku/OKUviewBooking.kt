@@ -12,9 +12,9 @@ import com.google.firebase.firestore.*
 import com.google.firebase.ktx.Firebase
 
 class OKUviewBooking : AppCompatActivity() {
-    private lateinit var  recyclerView: RecyclerView
-    private lateinit var okuArrayList : ArrayList<OKUviewBookingModel>
-    private lateinit var okuAdapter : OKUviewBookingAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var okuArrayList: ArrayList<OKUviewBookingModel>
+    private lateinit var okuAdapter: OKUviewBookingAdapter
     private lateinit var db: FirebaseFirestore
 
     var email: String? = null
@@ -59,26 +59,36 @@ class OKUviewBooking : AppCompatActivity() {
         EventChangeListener()
 
     }
-    private fun EventChangeListener(){
+
+    private fun EventChangeListener() {
         //cant get name to query for the OKU booking list
-        Log.d("TAG", "EventChangeListener $email $name")
-        db.collection("Booking Detail").whereEqualTo("oku", name)
-            .addSnapshotListener(object: EventListener<QuerySnapshot> {
-            override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
-                if (error != null){
-                    Log.e("Firestore Error",error.message.toString())
-                    return
-                }
+        db = FirebaseFirestore.getInstance()
+        val docRef = db.collection("OKU").document(email.toString())
+        docRef.addSnapshotListener(this) { value, error ->
+            name = value?.getString("name")
+            Log.d("TAG", "EventChangeListener $email $name")
 
-                for (dc : DocumentChange in value?.documentChanges!!){
+            db.collection("Booking Detail").whereEqualTo("oku", name.toString())
+                .addSnapshotListener(object : EventListener<QuerySnapshot> {
+                    override fun onEvent(
+                        value: QuerySnapshot?,
+                        error: FirebaseFirestoreException?
+                    ) {
+                        if (error != null) {
+                            Log.e("Firestore Error", error.message.toString())
+                            return
+                        }
 
-                    if (dc.type == DocumentChange.Type.ADDED){
+                        for (dc: DocumentChange in value?.documentChanges!!) {
 
-                        okuArrayList.add(dc.document.toObject(OKUviewBookingModel::class.java))
+                            if (dc.type == DocumentChange.Type.ADDED) {
+
+                                okuArrayList.add(dc.document.toObject(OKUviewBookingModel::class.java))
+                            }
+                        }
+                        okuAdapter.notifyDataSetChanged()
                     }
-                }
-                okuAdapter.notifyDataSetChanged()
-            }
-        })
+                })
+        }
     }
 }
