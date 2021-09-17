@@ -1,4 +1,4 @@
-package com.example.transportation4oku.oku
+package com.example.transportation4oku
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -10,8 +10,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.transportation4oku.MainActivity
-import com.example.transportation4oku.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -75,7 +73,9 @@ class OKULogin : AppCompatActivity() {
                         } else {
                             Toast.makeText(baseContext, "Log in Successfully!",
                                 Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, OKUMain::class.java))
+                            val intent = Intent(this, OKUMain::class.java)
+                            intent.putExtra("email",email.text.toString())
+                            startActivity(intent)
                             finish()
                         }
                     } else {

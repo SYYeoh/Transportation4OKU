@@ -3,6 +3,8 @@
     package="com.example.transportation4oku">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,10 +14,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Transportation4OKU">
         <activity
-            android:name=".CGBookingDetail"
+            android:name=".OKUviewBookingDetail"
             android:exported="true" />
         <activity
-            android:name=".CGPendingBooking"
+            android:name=".OKUviewBooking"
+            android:exported="true" />
+        <activity
+            android:name=".OKUEditPersonalDetail"
+            android:exported="true" />
+        <activity
+            android:name=".OKUPersonalDetail"
+            android:exported="true" />
+        <activity
+            android:name=".TransportBooking"
+            android:exported="true" />
+        <activity
+            android:name=".LocationDetail"
+            android:exported="true" />
+        <activity
+            android:name=".FindAPlace"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA1LO5nu_pkTndkb_D7eqxfbKp8sBvvnPU" />
+
+        <activity
+            android:name=".caregiver.CGBookingPending"
+            android:exported="true" />
+        <activity
+            android:name=".caregiver.CGAcceptedBookingDetail"
+            android:exported="true" />
+        <activity
+            android:name=".caregiver.CGBookingAccepted"
+            android:exported="true" />
+        <activity
+            android:name=".caregiver.CGEditPersonalDetail"
+            android:exported="true" />
+        <activity
+            android:name=".caregiver.CGPersonalDetail"
+            android:exported="true" />
+        <activity
+            android:name=".caregiver.CGBookingDetail"
             android:exported="true" />
         <activity
             android:name=".admin.AdminManageCGDetail"
@@ -36,19 +76,19 @@
             android:name=".admin.AdminManageBooking"
             android:exported="true" />
         <activity
-            android:name=".oku.OKUMain"
+            android:name=".OKUMain"
             android:exported="true" />
         <activity
-            android:name=".CGMain"
+            android:name=".caregiver.CGMain"
             android:exported="true" />
         <activity
             android:name=".admin.AdminMain"
             android:exported="true" />
         <activity
-            android:name=".oku.OKUSignUp"
+            android:name=".OKUSignUp"
             android:exported="true" />
         <activity
-            android:name=".CGSignUp"
+            android:name=".caregiver.CGSignUp"
             android:exported="true" />
         <activity
             android:name=".admin.AdminSignUp"
@@ -57,10 +97,10 @@
             android:name=".admin.AdminLogin"
             android:exported="true" />
         <activity
-            android:name=".CaregiverLogin"
+            android:name=".caregiver.CaregiverLogin"
             android:exported="true" />
         <activity
-            android:name=".oku.OKULogin"
+            android:name=".OKULogin"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

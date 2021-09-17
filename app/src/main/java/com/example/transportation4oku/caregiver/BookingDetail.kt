@@ -1,4 +1,4 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.caregiver
 
 data class BookingDetail(
     var from: String?=null,

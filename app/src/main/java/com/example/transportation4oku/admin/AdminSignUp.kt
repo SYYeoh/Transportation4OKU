@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.transportation4oku.MainActivity
 import com.example.transportation4oku.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -104,6 +105,19 @@ class AdminSignUp : AppCompatActivity() {
                             Toast.LENGTH_SHORT).show()
                     }
                 }
+        }
+    }
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser != null ) {
+            val intent = Intent(this, AdminMain::class.java)
+            startActivity(intent)
+            finish()
+        }else {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

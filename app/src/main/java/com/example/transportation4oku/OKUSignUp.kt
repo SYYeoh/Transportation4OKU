@@ -11,27 +11,26 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
-import java.util.*
 
-class CGSignUp : AppCompatActivity() {
+class OKUSignUp : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cgsign_up)
+        setContentView(R.layout.activity_okusign_up)
         auth = FirebaseAuth.getInstance()
 
-        val name = findViewById<EditText>(R.id.cgName)
-        val email = findViewById<EditText>(R.id.cgEmail)
-        val pass = findViewById<EditText>(R.id.cgPass)
-        val confirmPass = findViewById<EditText>(R.id.cgConfirmPass)
-        val contact = findViewById<EditText>(R.id.cgContactNo)
-        val ic = findViewById<EditText>(R.id.cgIC)
+        val name = findViewById<EditText>(R.id.okuName)
+        val email = findViewById<EditText>(R.id.okuEmail)
+        val pass = findViewById<EditText>(R.id.okuPass)
+        val confirmPass = findViewById<EditText>(R.id.okuConfirmPass)
+        val contact = findViewById<EditText>(R.id.okuContact)
+        val ic = findViewById<EditText>(R.id.okuIC)
 
-        val tologin = findViewById<Button>(R.id.tologinCG)
-        val register = findViewById<Button>(R.id.cgRegister)
+        val tologin = findViewById<Button>(R.id.tologinOKU)
+        val register = findViewById<Button>(R.id.okuRegister)
 
         tologin.setOnClickListener {
-            val intent = Intent(this, CaregiverLogin::class.java)
+            val intent = Intent(this, OKULogin::class.java)
             startActivity(intent)
             finish()
         }
@@ -48,12 +47,12 @@ class CGSignUp : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (pass.text.toString().isEmpty()) {
-                pass.error = "Please enter 6 character password"
+                pass.error = "Please enter password"
                 pass.requestFocus()
                 return@setOnClickListener
             }
             if (confirmPass.text.toString().isEmpty()) {
-                confirmPass.error = "Please enter 6 character confirm password"
+                confirmPass.error = "Please enter confirm password"
                 confirmPass.requestFocus()
                 return@setOnClickListener
             }
@@ -79,28 +78,42 @@ class CGSignUp : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val user = Firebase.auth.currentUser
                         val fStore = FirebaseFirestore.getInstance()
-                        val cgDetail = hashMapOf(
+                        val okuDetail = hashMapOf(
                             "name" to name.text.toString(),
                             "email" to email.text.toString(),
                             "contact" to contact.text.toString(),
                             "ic" to ic.text.toString(),
-                            "role" to "cg",
+                            "role" to "oku",
                             "status" to false
                         )
-                        val docRef = fStore.collection("CareGiver").document(email.text.toString())
-                            docRef.set(cgDetail).addOnSuccessListener {
-                            document ->
-                                Toast.makeText(baseContext, "Registered Successfully!",
-                                    Toast.LENGTH_SHORT).show()
-                        }.addOnFailureListener { e -> Log.w("TAG", "Error register cg") }
+                        val docRef = fStore.collection("OKU").document(email.text.toString())
+                        docRef.set(okuDetail).addOnSuccessListener {
+                                document ->
+                            Log.d("TAG", "OKU added " + name.text.toString())
+                            Toast.makeText(baseContext, "Registered Successfully!",
+                                Toast.LENGTH_SHORT).show()
+                        }.addOnFailureListener { e -> Log.w("TAG", "Error register oku") }
 
-                        startActivity(Intent(this, CGMain::class.java))
+                        startActivity(Intent(this, OKUMain::class.java))
                         finish()
                     } else {
                         Toast.makeText(baseContext, "Register failed.",
                             Toast.LENGTH_SHORT).show()
                     }
                 }
+        }
+    }
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser != null ) {
+            val intent = Intent(this, OKUMain::class.java)
+            startActivity(intent)
+            finish()
+        }else {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
