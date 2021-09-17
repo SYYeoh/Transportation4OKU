@@ -1,9 +1,10 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.oku
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.transportation4oku.R
 import com.google.firebase.auth.FirebaseAuth
 
 class OKUMain : AppCompatActivity() {
@@ -31,7 +32,7 @@ class OKUMain : AppCompatActivity() {
         }*/
 
         viewBooking.setOnClickListener {
-            val intent = Intent(this, OKUviewBooking::class.java)
+            val intent = Intent(this, OKUBooking::class.java)
             startActivity(intent)
         }
 

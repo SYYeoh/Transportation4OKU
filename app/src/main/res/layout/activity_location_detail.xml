@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LocationDetail">
+    tools:context=".oku.LocationDetail">
     <TextView
         android:id="@+id/txtLocationName"
         android:layout_width="wrap_content"

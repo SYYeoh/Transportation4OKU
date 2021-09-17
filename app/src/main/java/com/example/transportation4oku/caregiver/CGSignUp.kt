@@ -107,18 +107,4 @@ class CGSignUp : AppCompatActivity() {
                 }
         }
     }
-
-    public override fun onStart() {
-        super.onStart()
-        val currentUser = auth.currentUser
-        if (currentUser != null ) {
-            val intent = Intent(this, CGMain::class.java)
-            startActivity(intent)
-            finish()
-        }else {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-    }
 }

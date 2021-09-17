@@ -1,4 +1,4 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.oku
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,6 +11,7 @@ import android.widget.*
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.transportation4oku.R
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -78,7 +79,7 @@ class FindAPlace : AppCompatActivity() {
             locationAdapter = LocationAdapter(locationClassArrayList)
 
             recyclerView.adapter = locationAdapter
-            locationAdapter.setOnItemClickListener(object:LocationAdapter.onItemClickListener{
+            locationAdapter.setOnItemClickListener(object: LocationAdapter.onItemClickListener {
                 override fun onItemClick(position: Int) {
                     passValue = locationClassArrayList[position].ID.toString()
                     getLocation(
@@ -112,7 +113,7 @@ class FindAPlace : AppCompatActivity() {
         }
         btnNext.setOnClickListener {
             if(passValue != ""){
-                val intent = Intent(this,LocationDetail::class.java)
+                val intent = Intent(this, LocationDetail::class.java)
                 intent.putExtra("ID",passValue)
                 startActivity(intent)
             }

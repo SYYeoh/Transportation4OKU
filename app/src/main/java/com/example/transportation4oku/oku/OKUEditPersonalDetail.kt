@@ -1,4 +1,4 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.oku
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.transportation4oku.caregiver.CGMain
-import com.example.transportation4oku.caregiver.CGPersonalDetail
+import com.example.transportation4oku.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

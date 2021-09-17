@@ -35,6 +35,7 @@ class CGBookingDetail : AppCompatActivity() {
         var from:String? = null
         var to:String? = null
         var name:String? = null
+        var email:String? = null
 
         //button
         val back = findViewById<Button>(R.id.backcgbtBtn)
@@ -69,6 +70,7 @@ class CGBookingDetail : AppCompatActivity() {
             val user = Firebase.auth.currentUser
             user?.let {
                 name = user.displayName
+
             }
             val acceptRef = db.collection("Booking Detail").document(Bookid.toString())
             acceptRef.update("status", "accepted", "caregiver", name).addOnSuccessListener {

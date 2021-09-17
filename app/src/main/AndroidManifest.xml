@@ -14,25 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Transportation4OKU">
         <activity
-            android:name=".OKUviewBookingDetail"
+            android:name=".oku.OKUBookingDetail"
             android:exported="true" />
         <activity
-            android:name=".OKUviewBooking"
+            android:name=".oku.OKUBooking"
             android:exported="true" />
         <activity
-            android:name=".OKUEditPersonalDetail"
+            android:name=".oku.OKUEditPersonalDetail"
             android:exported="true" />
         <activity
-            android:name=".OKUPersonalDetail"
+            android:name=".oku.OKUPersonalDetail"
             android:exported="true" />
         <activity
-            android:name=".TransportBooking"
+            android:name=".oku.TransportBooking"
             android:exported="true" />
         <activity
-            android:name=".LocationDetail"
+            android:name=".oku.LocationDetail"
             android:exported="true" />
         <activity
-            android:name=".FindAPlace"
+            android:name=".oku.FindAPlace"
             android:exported="true" />
 
         <meta-data
@@ -76,7 +76,7 @@
             android:name=".admin.AdminManageBooking"
             android:exported="true" />
         <activity
-            android:name=".OKUMain"
+            android:name=".oku.OKUMain"
             android:exported="true" />
         <activity
             android:name=".caregiver.CGMain"
@@ -85,7 +85,7 @@
             android:name=".admin.AdminMain"
             android:exported="true" />
         <activity
-            android:name=".OKUSignUp"
+            android:name=".oku.OKUSignUp"
             android:exported="true" />
         <activity
             android:name=".caregiver.CGSignUp"
@@ -100,7 +100,7 @@
             android:name=".caregiver.CaregiverLogin"
             android:exported="true" />
         <activity
-            android:name=".OKULogin"
+            android:name=".oku.OKULogin"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

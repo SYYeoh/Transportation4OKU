@@ -1,4 +1,4 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.oku
 
 import android.content.DialogInterface
 import android.content.Intent
@@ -10,6 +10,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.example.transportation4oku.MainActivity
+import com.example.transportation4oku.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore

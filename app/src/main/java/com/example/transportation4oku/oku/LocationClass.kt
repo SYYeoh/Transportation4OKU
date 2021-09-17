@@ -1,4 +1,4 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.oku
 
 import com.google.firebase.firestore.GeoPoint
 

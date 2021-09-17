@@ -1,10 +1,11 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.oku
 
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
+import com.example.transportation4oku.R
 
 class LocationAdapter(private val locationClassList : ArrayList<LocationClass>):RecyclerView.Adapter<LocationAdapter.MyViewHolder>() {
     private lateinit var mListener : onItemClickListener
@@ -12,15 +13,16 @@ class LocationAdapter(private val locationClassList : ArrayList<LocationClass>):
     interface onItemClickListener {
         fun onItemClick(position: Int)
     }
-    fun setOnItemClickListener(listener:onItemClickListener){
+    fun setOnItemClickListener(listener: onItemClickListener){
         mListener = listener
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LocationAdapter.MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.location_list_item,
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(
+            R.layout.location_list_item,
             parent,false)
         return MyViewHolder(itemView,mListener)
     }
-    override fun onBindViewHolder(holder: LocationAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val locationClass : LocationClass = locationClassList[position]
         holder.name.text = locationClass.Name
     }

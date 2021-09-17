@@ -1,9 +1,11 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.oku
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
+import com.example.transportation4oku.R
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
@@ -114,11 +116,25 @@ class TransportBooking : AppCompatActivity() {
                 }
                 val nameRef = db.collection("OKU").document(email.toString())
                 nameRef.addSnapshotListener(this){
-                    value, error ->
+                        value, error ->
                     name = value?.getString("name")
+                    Log.d("TAG","$name")
+
+                    val locationHash = hashMapOf(
+                        "caregiver" to "",
+                        "date" to locationDate,
+                        "from" to txtPU.text.toString(),
+                        "id" to bookingID,
+                        "oku" to name.toString(),
+                        "status" to "pending",
+                        "time" to locationTime,
+                        "to" to txtLocationName.text.toString(),
+                    )
+                    val docRef = db.collection("Booking Detail").document(bookingID.toString())
+                    docRef.set(locationHash)
                 }
 
-                val locationHash = hashMapOf(
+                /*val locationHash = hashMapOf(
                     "caregiver" to "",
                     "date" to locationDate,
                     "from" to txtPU.text.toString(),
@@ -129,7 +145,7 @@ class TransportBooking : AppCompatActivity() {
                     "to" to txtLocationName.text.toString(),
                 )
                 val docRef = db.collection("Booking Detail").document(bookingID.toString())
-                docRef.set(locationHash)
+                docRef.set(locationHash)*/
 
                 //Toast.makeText(this, "GOTO MENU", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, OKUMain::class.java)
@@ -141,7 +157,7 @@ class TransportBooking : AppCompatActivity() {
             }
         }
         btnBack.setOnClickListener {
-            val intent = Intent(this,LocationDetail::class.java)
+            val intent = Intent(this, LocationDetail::class.java)
             intent.putExtra("ID",locationID)
             startActivity(intent)
         }

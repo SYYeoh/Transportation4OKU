@@ -1,4 +1,4 @@
-package com.example.transportation4oku
+package com.example.transportation4oku.oku
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.transportation4oku.R
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
@@ -62,7 +63,7 @@ class LocationDetail : AppCompatActivity() {
             launchMap(LatLng(locationCoordinate!!.latitude, locationCoordinate!!.longitude), locationName!!)
         }
         btnBook.setOnClickListener {
-            val intent = Intent(this,TransportBooking::class.java)
+            val intent = Intent(this, TransportBooking::class.java)
             intent.putExtra("ID",locationID)
             startActivity(intent)
         }
@@ -70,7 +71,7 @@ class LocationDetail : AppCompatActivity() {
             Toast.makeText(this, "GOTO REVIEW PAGE", Toast.LENGTH_SHORT).show()
         }
         btnBack.setOnClickListener {
-            val intent = Intent(this,FindAPlace::class.java)
+            val intent = Intent(this, FindAPlace::class.java)
             startActivity(intent)
         }
     }
