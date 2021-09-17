@@ -9,8 +9,10 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.GeoPoint
+import com.google.firebase.ktx.Firebase
 
 class TransportBooking : AppCompatActivity() {
 
@@ -28,6 +30,8 @@ class TransportBooking : AppCompatActivity() {
         var locaitonAddress: String? = null
         var locationDescription: String? = null
         var locationCoordinate: GeoPoint? = null
+        var email: String? = null
+        var name: String? = null
 
         val txtDes = findViewById<TextView>(R.id.txtDes)
         val txtLocationName = findViewById<TextView>(R.id.txtLocationName)
@@ -104,13 +108,22 @@ class TransportBooking : AppCompatActivity() {
                 else if(rdPM.isChecked){
                     locationTime += "PM"
                 }
+                val user = Firebase.auth.currentUser
+                user?.let {
+                    email = user.email
+                }
+                val nameRef = db.collection("OKU").document(email.toString())
+                nameRef.addSnapshotListener(this){
+                    value, error ->
+                    name = value?.getString("name")
+                }
 
                 val locationHash = hashMapOf(
                     "caregiver" to "",
                     "date" to locationDate,
                     "from" to txtPU.text.toString(),
                     "id" to bookingID,
-                    "oku" to "PLEASE CHG HERE",
+                    "oku" to name.toString(),
                     "status" to "pending",
                     "time" to locationTime,
                     "to" to txtLocationName.text.toString(),
