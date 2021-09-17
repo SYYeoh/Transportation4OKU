@@ -10,12 +10,14 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.transportation4oku.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class CaregiverLogin : AppCompatActivity() {
+    var role: String? = null
+    var status: Boolean? = null
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,10 +59,25 @@ class CaregiverLogin : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         val user = auth.currentUser
+                        val db = FirebaseFirestore.getInstance()
+                        val docRef = db.collection("CareGiver").document(email.text.toString())
+                        docRef.addSnapshotListener(this) {
+                                value, e ->
+                            role = value!!.getString("role")
+                            status = value!!.getBoolean("status")
+                        }
+
+                        if (role != "cg" || status != false) {
+                            Toast.makeText(baseContext, "Your role is not CareGiver or Account is Banned",
+                                Toast.LENGTH_SHORT).show()
+                            return@addOnCompleteListener
+                        }
+
                         Toast.makeText(baseContext, "Log in Successfully!",
                             Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, CGMain::class.java))
                         finish()
+
                     } else {
                         Toast.makeText(baseContext, "Log in Failed.",
                             Toast.LENGTH_SHORT).show()

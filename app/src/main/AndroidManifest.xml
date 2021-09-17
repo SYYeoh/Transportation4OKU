@@ -12,40 +12,55 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Transportation4OKU">
         <activity
-            android:name=".AdminBookingDetail"
+            android:name=".CGBookingDetail"
             android:exported="true" />
         <activity
-            android:name=".AdminManageUser"
+            android:name=".CGPendingBooking"
             android:exported="true" />
         <activity
-            android:name=".AdminManageBooking"
+            android:name=".admin.AdminManageCGDetail"
             android:exported="true" />
         <activity
-            android:name=".OKUMain"
+            android:name=".admin.AdminManageCG"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AdminManageOKUDetail"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AdminBookingDetail"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AdminManageOKU"
+            android:exported="true" />
+        <activity
+            android:name=".admin.AdminManageBooking"
+            android:exported="true" />
+        <activity
+            android:name=".oku.OKUMain"
             android:exported="true" />
         <activity
             android:name=".CGMain"
             android:exported="true" />
         <activity
-            android:name=".AdminMain"
+            android:name=".admin.AdminMain"
             android:exported="true" />
         <activity
-            android:name=".OKUSignUp"
+            android:name=".oku.OKUSignUp"
             android:exported="true" />
         <activity
             android:name=".CGSignUp"
             android:exported="true" />
         <activity
-            android:name=".AdminSignUp"
+            android:name=".admin.AdminSignUp"
             android:exported="true" />
         <activity
-            android:name=".AdminLogin"
+            android:name=".admin.AdminLogin"
             android:exported="true" />
         <activity
             android:name=".CaregiverLogin"
             android:exported="true" />
         <activity
-            android:name=".OKULogin"
+            android:name=".oku.OKULogin"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

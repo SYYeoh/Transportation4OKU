@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminMain">
+    tools:context=".admin.AdminMain">
 
     <TextView
         android:id="@+id/textView11"
@@ -19,6 +19,18 @@
         app:layout_constraintVertical_bias="0.11" />
 
     <Button
+        android:id="@+id/AdminUserBtn"
+        style="@style/normalBtn"
+        android:layout_width="145dp"
+        android:layout_height="65dp"
+        android:text="Manage OKU Account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48" />
+
+    <Button
         android:id="@+id/AdminBookingbtn"
         style="@style/normalBtn"
         android:layout_width="145dp"
@@ -26,21 +38,19 @@
         android:text="Manage Booking"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintVertical_bias="0.3" />
 
     <Button
-        android:id="@+id/AdminUserBtn"
+        android:id="@+id/AdminCGAccBtn"
         style="@style/normalBtn"
-        android:layout_width="145dp"
-        android:layout_height="65dp"
-        android:text="Manage User Account"
+        android:layout_width="152dp"
+        android:layout_height="73dp"
+        android:text="Manage CareGiver Account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.665" />
 </androidx.constraintlayout.widget.ConstraintLayout>

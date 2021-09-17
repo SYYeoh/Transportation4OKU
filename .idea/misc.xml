@@ -6,17 +6,25 @@
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_booking_detail.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_login.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_main.xml" value="0.33" />
-        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_manage_booking.xml" value="0.23143115942028986" />
-        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_manage_user.xml" value="0.17806484295845998" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_manage_booking.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_manage_cg.xml" value="0.171225937183384" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_manage_cgdetail.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_manage_user.xml" value="0.16138328530259366" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_manage_user_detail.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_admin_sign_up.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_caregiver_login.xml" value="0.5" />
-        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_cgmain.xml" value="0.15555555555555556" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_cgbooking_detail.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_cgmain.xml" value="0.25" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_cgpending_booking.xml" value="0.25" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_cgsign_up.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_okulogin.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_okumain.xml" value="0.15555555555555556" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/activity_okusign_up.xml" value="0.33" />
         <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/list_adminbooking.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/list_adminmanagecg.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/list_adminmanageuser.xml" value="0.18" />
+        <entry key="..\:/Android/AndroidStudioProjects/Transportation4OKU/app/src/main/res/layout/list_cgpendingbooking.xml" value="0.1" />
       </map>
     </option>
   </component>

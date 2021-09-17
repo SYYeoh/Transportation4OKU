@@ -83,10 +83,11 @@ class CGSignUp : AppCompatActivity() {
                             "name" to name.text.toString(),
                             "email" to email.text.toString(),
                             "contact" to contact.text.toString(),
-                            "ic" to ic.text.toString()
+                            "ic" to ic.text.toString(),
+                            "role" to "cg",
+                            "status" to false
                         )
-                        val docRef = fStore.collection("NormalUser").document("user")
-                            .collection("CareGiver").document(name.text.toString())
+                        val docRef = fStore.collection("CareGiver").document(email.text.toString())
                             docRef.set(cgDetail).addOnSuccessListener {
                             document ->
                                 Toast.makeText(baseContext, "Registered Successfully!",
