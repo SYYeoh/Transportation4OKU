@@ -148,7 +148,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lblBookingID" />
 
     <Button
-        android:id="@+id/backcgabBtn"
+        android:id="@+id/backcgBtn"
         android:layout_width="145dp"
         android:layout_height="65dp"
         android:text="Back"
@@ -160,7 +160,7 @@
         app:layout_constraintVertical_bias="0.891" />
 
     <Button
-        android:id="@+id/rejectcgabBtn"
+        android:id="@+id/rejectcgBtn"
         android:layout_width="145dp"
         android:layout_height="65dp"
         android:text="Reject"
